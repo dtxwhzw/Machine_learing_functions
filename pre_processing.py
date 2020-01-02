@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pylab as pl
 import numpy as np
-%matplotlib inline
+%matplotlib inline#if you'll run this code in jupyter notebook, then this line is needed, otherwise you can comment it.
 
 '''
 import the data or download the data here
