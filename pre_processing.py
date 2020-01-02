@@ -63,3 +63,28 @@ the column number of x is equal to y, and the random_state have the same effect 
 ensure the dataset is split into a same one. otherwise the output will be different everytime you run the code.
 '''
 '''this is the end of pre-processing of knn classification'''
+
+'''
+this is the pre-processing for decision tree, because the Sklearn Decision Trees can handle categorical variables.
+so we need to convert these features to numerical values. In order to do this, we can use LabelDEncoder or 
+pandas.get)dummies().i.e.
+'''
+from sklearn import preprocessing
+le_sex = preprocessing.LabelEncoder()
+le_sex.fit(['F','M'])
+X[:,1] = le_sex.transform(X[:,1])
+'''
+the LabelEncoder() convert variables into numerical based on the number of the variables, i.e.,there are two categorical
+variables which are'F'and'M', they're converted into 0 and 1, according to lexicographic order. So, 'F' is 0, and 'M' is 1.
+'''
+
+le_BP = preprocessing.LabelEncoder()
+le_BP.fit([ 'LOW', 'NORMAL', 'HIGH'])
+X[:,2] = le_BP.transform(X[:,2])
+
+
+le_Chol = preprocessing.LabelEncoder()
+le_Chol.fit([ 'NORMAL', 'HIGH'])
+X[:,3] = le_Chol.transform(X[:,3])
+
+X[0:10]
