@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.ticker as ticker
 from sklearn import preprocessing
+import scipy.optimize as opt
 #%matplotlib inline if you'll run this code in jupyter notebook, then this line is needed, otherwise you can comment it.
 
 '''
@@ -88,3 +89,14 @@ le_Chol.fit([ 'NORMAL', 'HIGH'])
 X[:,3] = le_Chol.transform(X[:,3])
 
 X[0:10]
+
+
+"""
+pre-processing for the logistic regression
+"""
+X = np.asarray(df[str])#this will transform the column into an array
+y = np.asarrya(df[str])
+'''normalize the data(we only need to normalize the X which is the dependent data)'''
+from sklearn import preprocessing
+X = preprocessing.StandardScaler().fit(X).transform(X)
+X[0:5]
